@@ -100,6 +100,14 @@
         ],
       },
       width: 200,
+      editRender: ({ text }) => {
+        const array: Array<any> = [];
+        const a: string = text.toString();
+        a.split(',').forEach((item: string) => {
+          array.push(h(Tag, { color: 'blue' }, () => item));
+        });
+        return h('div', array);
+      },      
     },
     {
       title: '远程下拉',
